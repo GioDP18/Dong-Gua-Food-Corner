@@ -460,7 +460,7 @@ http://www.templatemo.com/tm-515-eatery
 
 
      <!-- TESTIMONIAL -->
-     <section id="testimonial" data-stellar-background-ratio="0.5">
+     <section id="testimonial" data-stellar-background-ratio="0.5" style="margin-top:5rem;">
           <div class="overlay"></div>
           <div class="container">
                <div class="row">
@@ -546,13 +546,13 @@ http://www.templatemo.com/tm-515-eatery
                          </div>
 
                          <!-- CONTACT FORM -->
-                         <form action="#" method="post" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
+                         <form action="php/contact.php" method="post" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
 
                               <!-- IF MAIL SENT SUCCESSFUL  // connect this with custom JS -->
-                              <h6 class="text-success">Your message has been sent successfully.</h6>
+                              <h6 class="text-success" id="cf-success">Your message has been sent successfully.</h6>
                               
                               <!-- IF MAIL NOT SENT -->
-                              <h6 class="text-danger">E-mail must be valid and message must be longer than 1 character.</h6>
+                              <h6 class="text-danger" id="cf-error">There was an error while seding your feedback.</h6>
 
                               <div class="col-md-6 col-sm-6">
                                    <input type="text" class="form-control" id="cf-name" name="name" placeholder="Full name">
@@ -563,11 +563,11 @@ http://www.templatemo.com/tm-515-eatery
                               </div>
 
                               <div class="col-md-12 col-sm-12">
-                                   <input type="text" class="form-control" id="cf-subject" name="subject" placeholder="Subject">
+                                   <!-- <input type="text" class="form-control" id="cf-subject" name="subject" placeholder="Subject"> -->
 
-                                   <textarea class="form-control" rows="6" id="cf-message" name="message" placeholder="Tell about your project"></textarea>
+                                   <textarea class="form-control" rows="8" id="cf-message" name="message" placeholder="Tell us about your feedback"></textarea>
 
-                                   <button type="submit" class="form-control" id="cf-submit" name="submit" style="background-color:#7dbd2f;">Send Message</button>
+                                   <button type="button" class="form-control" id="cf-submit" name="submit" style="background-color:#7dbd2f;" onclick="sendFeedback()">Send Message</button>
                               </div>
                          </form>
                     </div>
@@ -639,6 +639,18 @@ http://www.templatemo.com/tm-515-eatery
           </div>
      </footer>
 
+     <script>
+          function sendFeedback() {
+               var name = document.getElementById("cf-name").value;
+               var email = document.getElementById("cf-email").value;
+               var message = document.getElementById("cf-message").value;
+
+               var body = "Name: " + name + "%0D%0AEmail: " + email + "%0D%0AMessage: " + message;
+               var mailtoLink = "mailto:neferpitoy101@gmail.com?subject=Feedback&body=" + body;
+
+               window.location.href = mailtoLink;
+          }
+     </script>
 
      <!-- SCRIPTS -->
      <script src="js/jquery.js"></script>
