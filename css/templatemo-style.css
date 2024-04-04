@@ -575,7 +575,7 @@ http://www.templatemo.com/tm-515-eatery
 
   .menu-thumb .menu-info {
     position: absolute;
-    top: 60%;
+    top: 0;
     left: 0px;
     right: 0px;
     bottom: 0px;
@@ -586,6 +586,7 @@ http://www.templatemo.com/tm-515-eatery
 
   .menu-info .menu-item {
     float: left;
+    width: 70%
   }
 
   .menu-info .menu-price {
