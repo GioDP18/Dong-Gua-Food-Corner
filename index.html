@@ -563,9 +563,9 @@ http://www.templatemo.com/tm-515-eatery
                               </div>
 
                               <div class="col-md-12 col-sm-12">
-                                   <!-- <input type="text" class="form-control" id="cf-subject" name="subject" placeholder="Subject"> -->
+                                   <input type="text" class="form-control" id="cf-subject" name="subject" placeholder="Subject">
 
-                                   <textarea class="form-control" rows="8" id="cf-message" name="message" placeholder="Tell us about your feedback"></textarea>
+                                   <textarea class="form-control" rows="6" id="cf-message" name="message" placeholder="Tell us about your feedback"></textarea>
 
                                    <button type="button" class="form-control" id="cf-submit" name="submit" style="background-color:#7dbd2f;" onclick="sendFeedback()">Send Message</button>
                               </div>
@@ -643,10 +643,11 @@ http://www.templatemo.com/tm-515-eatery
           function sendFeedback() {
                var name = document.getElementById("cf-name").value;
                var email = document.getElementById("cf-email").value;
+               var subject = document.getElementById("cf-subject").value;
                var message = document.getElementById("cf-message").value;
 
                var body = message;
-               var mailtoLink = "mailto:neferpitoy101@gmail.com?subject=Feedback&body=" + body;
+               var mailtoLink = "mailto:neferpitoy101@gmail.com?subject="+subject+"&body=" + body;
 
                window.location.href = mailtoLink;
           }
